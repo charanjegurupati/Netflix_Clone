@@ -11,11 +11,10 @@ dotenv.config();
 const app = express();
 
 // Middleware
-app.use(cors({
-  origin: '*', // For production, replace '*' with the actual Vercel frontend URL
-  credentials: true
-}));
 app.use(express.json());
+app.use(cors({
+  origin: '*'
+}));
 
 // Basic Route
 app.get('/', (req, res) => {
