@@ -19,27 +19,30 @@ const Home = () => {
         setLoading(false);
       }
     };
-
     fetchMovies();
   }, []);
 
-  if (loading) return <div style={{ color: 'white', textAlign: 'center', marginTop: '20vh' }}>Loading...</div>;
-
-  // Split movies by category for the rows
-  const trendingMovies = movies.filter(m => m.category === 'Trending Now');
-  const topRatedMovies = movies.filter(m => m.category === 'Top Rated');
-  const actionMovies = movies.filter(m => m.category === 'Action Movies');
-
-  // Pick a random movie for the hero banner
   const heroMovie = movies.length > 0 ? movies[Math.floor(Math.random() * movies.length)] : null;
 
   return (
     <div className="home">
       <Navbar />
       {heroMovie && <Hero movie={heroMovie} />}
-      <Row title="Trending Now" movies={trendingMovies.length > 0 ? trendingMovies : movies} />
-      <Row title="Top Rated" movies={topRatedMovies.length > 0 ? topRatedMovies : movies} />
-      <Row title="Action Movies" movies={actionMovies.length > 0 ? actionMovies : movies} />
+      
+      {loading ? (
+        <div style={{color: 'white', textAlign: 'center', marginTop: '50px'}}>Loading Movies...</div>
+      ) : (
+        <div style={{ paddingBottom: '40px' }}>
+          <Row title="Trending Now" movies={movies.filter(m => m.category === 'Trending Now' || m.category === 'Trending')} />
+          <Row title="Top Rated" movies={movies.filter(m => m.category === 'Top Rated')} />
+          <Row title="Action Movies" movies={movies.filter(m => m.category === 'Action Movies')} />
+          <Row title="Sci-Fi & Adventure" movies={movies.filter(m => m.category === 'Sci-Fi & Adventure')} />
+          <Row title="Comedy" movies={movies.filter(m => m.category === 'Comedy')} />
+          <Row title="Romance" movies={movies.filter(m => m.category === 'Romance')} />
+          <Row title="Horror & Thriller" movies={movies.filter(m => m.category === 'Horror & Thriller')} />
+          <Row title="Anime" movies={movies.filter(m => m.category === 'Anime')} />
+        </div>
+      )}
     </div>
   );
 };
