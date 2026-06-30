@@ -38,7 +38,10 @@ const Admin = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axiosInstance.post('/api/movies', formData);
+      const token = localStorage.getItem('token');
+      await axiosInstance.post('/api/movies', formData, {
+        headers: { Authorization: `Bearer ${token}` }
+      });
       alert('Movie added successfully!');
       setFormData({
         title: '',
@@ -58,7 +61,10 @@ const Admin = () => {
   const handleDelete = async (id) => {
     if (!window.confirm('Are you sure you want to delete this movie?')) return;
     try {
-      await axiosInstance.delete(`/api/movies/${id}`);
+      const token = localStorage.getItem('token');
+      await axiosInstance.delete(`/api/movies/${id}`, {
+        headers: { Authorization: `Bearer ${token}` }
+      });
       alert('Movie deleted!');
       fetchMovies();
     } catch (err) {
