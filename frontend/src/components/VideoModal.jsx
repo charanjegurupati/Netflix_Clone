@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactPlayer from 'react-player';
+import ReactPlayer from 'react-player/lazy';
 import { IoMdClose } from 'react-icons/io';
 
 const VideoModal = ({ trailerUrl, onClose }) => {
