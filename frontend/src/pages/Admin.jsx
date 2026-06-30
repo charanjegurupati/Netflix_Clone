@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axiosInstance from '../utils/axiosInstance';
 import Navbar from '../components/Navbar';
+import { AuthContext } from '../context/AuthContext';
 
 const Admin = () => {
+  const { user } = React.useContext(AuthContext);
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
   const [formData, setFormData] = useState({
@@ -64,6 +66,15 @@ const Admin = () => {
       console.error(err);
     }
   };
+
+  if (!user || user.email !== 'charanjegurupati@gmail.com') {
+    return (
+      <div className="home" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <Navbar />
+        <h2 style={{ color: 'white' }}>You do not have permission to view this page.</h2>
+      </div>
+    );
+  }
 
   return (
     <div className="home" style={{ minHeight: '100vh' }}>

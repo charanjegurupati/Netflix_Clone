@@ -1,6 +1,27 @@
 const express = require('express');
 const router = express.Router();
 const Movie = require('../models/Movie');
+const User = require('../models/User');
+const jwt = require('jsonwebtoken');
+
+// Middleware to protect and check admin
+const adminProtect = async (req, res, next) => {
+  const token = req.headers.authorization?.split(' ')[1];
+  if (!token) return res.status(401).json({ message: 'Not authorized' });
+
+  try {
+    const decoded = jwt.verify(token, process.env.JWT_SECRET || 'fallback_secret');
+    const user = await User.findById(decoded.id);
+    
+    if (user && user.email === 'charanjegurupati@gmail.com') {
+      next();
+    } else {
+      res.status(403).json({ message: 'Admin access required' });
+    }
+  } catch (err) {
+    res.status(401).json({ message: 'Token failed' });
+  }
+};
 
 // GET all movies
 router.get('/', async (req, res) => {
@@ -33,27 +54,8 @@ router.get('/category/:category', async (req, res) => {
   }
 });
 
-// POST a new movie (usually admin only in real app)
-router.post('/', async (req, res) => {
-  const movie = new Movie({
-    title: req.body.title,
-    description: req.body.description,
-    posterUrl: req.body.posterUrl,
-    bannerUrl: req.body.bannerUrl,
-    category: req.body.category,
-    rating: req.body.rating
-  });
-
-  try {
-    const newMovie = await movie.save();
-    res.status(201).json(newMovie);
-  } catch (err) {
-    res.status(400).json({ message: err.message });
-  }
-});
-
-// Create a movie (Admin only in production)
-router.post('/', async (req, res) => {
+// POST a new movie (Admin only)
+router.post('/', adminProtect, async (req, res) => {
   try {
     const newMovie = new Movie(req.body);
     const savedMovie = await newMovie.save();
@@ -63,8 +65,8 @@ router.post('/', async (req, res) => {
   }
 });
 
-// Delete a movie
-router.delete('/:id', async (req, res) => {
+// Delete a movie (Admin only)
+router.delete('/:id', adminProtect, async (req, res) => {
   try {
     await Movie.findByIdAndDelete(req.params.id);
     res.json({ message: 'Movie deleted' });

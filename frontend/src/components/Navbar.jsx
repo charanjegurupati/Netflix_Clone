@@ -35,7 +35,9 @@ const Navbar = () => {
             <Link to="/tv-shows">TV Shows</Link>
             <Link to="/movies">Movies</Link>
             <Link to="/my-list">My List</Link>
-            <Link to="/admin">Admin</Link>
+            {user && user.email === 'charanjegurupati@gmail.com' && (
+              <Link to="/admin">Admin</Link>
+            )}
             <button onClick={handleLogout} style={{background: 'none', border: 'none', color: 'white', marginLeft: '20px', cursor: 'pointer', fontWeight: 500}}>Logout</button>
           </>
         ) : (
