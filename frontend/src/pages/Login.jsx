@@ -46,6 +46,9 @@ const Login = () => {
           
           <div className="auth-footer">
             <span>New to Netflix? <Link to="/signup">Sign up now.</Link></span>
+            <p style={{marginTop: '20px', fontSize: '13px', color: '#8c8c8c'}}>
+              <strong>Disclaimer:</strong> This is an educational portfolio project and is NOT the real Netflix. Please do not enter real passwords or personal information.
+            </p>
           </div>
         </form>
       </div>
