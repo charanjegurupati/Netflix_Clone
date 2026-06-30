@@ -38,6 +38,7 @@ const Row = ({ title, movies }) => {
               src={movie.posterUrl}
               alt={movie.title}
             />
+            <p className="poster-title" style={{color: '#fff', fontSize: '14px', marginTop: '5px', textAlign: 'center', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', width: '200px'}}>{movie.title}</p>
             <div className="poster-overlay">
               <button className="icon-btn play-btn" onClick={(e) => { e.stopPropagation(); handlePlay(movie); }}>
                 <IoMdPlay />
