@@ -11,7 +11,7 @@ const mockMovies = [
     description: 'When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces, and one strange little girl.',
     posterUrl: 'https://image.tmdb.org/t/p/w500/u3bZgnGQ9T01sWNhyveQz0wH0Hl.jpg',
     bannerUrl: 'https://image.tmdb.org/t/p/original/mBaXZ95R2OxueZhvQbcEWy2DqyO.jpg',
-    trailerUrl: 'https://www.youtube.com/watch?v=b9EkMc79ZSU',
+    trailerUrl: 'https://www.youtube.com/results?search_query=Stranger+Things+Official+Trailer',
     category: 'Trending Now',
     rating: 8.6
   },
@@ -20,16 +20,16 @@ const mockMovies = [
     description: 'Geralt of Rivia, a solitary monster hunter, struggles to find his place in a world where people often prove more wicked than beasts.',
     posterUrl: 'https://image.tmdb.org/t/p/w500/7vjaCdMw15FEbXyLQTVa04URsPm.jpg',
     bannerUrl: 'https://image.tmdb.org/t/p/original/jBJWaqoSCiARWtfV0GlqHrcdSc8.jpg',
-    trailerUrl: 'https://www.youtube.com/watch?v=ndl1W4ltcmg',
+    trailerUrl: 'https://www.youtube.com/results?search_query=The+Office+US+Official+Trailer',
     category: 'Trending Now',
     rating: 8.2
   },
   {
     title: 'Squid Game',
     description: 'Hundreds of cash-strapped players accept a strange invitation to compete in children\'s games. Inside, a tempting prize awaits with deadly high stakes.',
-    posterUrl: 'https://image.tmdb.org/t/p/w500/dDlEmu3EZ0Pgg93K2SVNLCjCSvE.jpg',
-    bannerUrl: 'https://image.tmdb.org/t/p/original/oaGvjB0CWkP4DlHKfPnZQALTnki.jpg',
-    trailerUrl: 'https://www.youtube.com/watch?v=oqxAJKy0ii4',
+    posterUrl: 'https://image.tmdb.org/t/p/w500/dDlEmu3EZ0Pgg93K2SVNlcjCSv1.jpg',
+    bannerUrl: 'https://image.tmdb.org/t/p/original/yF1eOkaYvwiORauRCPWznV9xVvi.jpg',
+    trailerUrl: 'https://www.youtube.com/results?search_query=Squid+Game+Official+Trailer',
     category: 'Trending Now',
     rating: 8.0
   },
@@ -38,7 +38,7 @@ const mockMovies = [
     description: 'A group of vigilantes known informally as “The Boys” set out to take down corrupt superheroes with no more than blue-collar grit and a willingness to fight dirty.',
     posterUrl: 'https://image.tmdb.org/t/p/w500/stTEycfG9928HYGEISBFaG1ngjM.jpg',
     bannerUrl: 'https://image.tmdb.org/t/p/original/n6vVs6z8obNpmlEdVgZE3pUSFOu.jpg',
-    trailerUrl: 'https://www.youtube.com/watch?v=M1bhOaLV4FU',
+    trailerUrl: 'https://www.youtube.com/results?search_query=The+Boys+Official+Trailer',
     category: 'Trending Now',
     rating: 8.7
   },
@@ -49,7 +49,7 @@ const mockMovies = [
     description: 'A high school chemistry teacher diagnosed with inoperable lung cancer turns to manufacturing and selling methamphetamine in order to secure his family\'s future.',
     posterUrl: 'https://image.tmdb.org/t/p/w500/ggFHVNu6YYI5L9pCfOacjizRGt.jpg',
     bannerUrl: 'https://image.tmdb.org/t/p/original/tsRy63Mu5cu8etL1X7ZLyf7UP1M.jpg',
-    trailerUrl: 'https://www.youtube.com/watch?v=HhesaQXLuRY',
+    trailerUrl: 'https://www.youtube.com/results?search_query=Breaking+Bad+Official+Trailer',
     category: 'Top Rated',
     rating: 9.5
   },
@@ -58,7 +58,7 @@ const mockMovies = [
     description: 'Nine noble families fight for control over the mythical lands of Westeros, while an ancient enemy returns after being dormant for thousands of years.',
     posterUrl: 'https://image.tmdb.org/t/p/w500/1XS1oqL89opfnbLl8WnZY1O1uJx.jpg',
     bannerUrl: 'https://image.tmdb.org/t/p/original/suopoADq0k8YZr4dQXcU6pToj6s.jpg',
-    trailerUrl: 'https://www.youtube.com/watch?v=KPLWWIfvG6f',
+    trailerUrl: 'https://www.youtube.com/results?search_query=Game+of+Thrones+Official+Trailer',
     category: 'Top Rated',
     rating: 9.3
   },
@@ -67,7 +67,7 @@ const mockMovies = [
     description: 'A gangster family epic set in 1919 Birmingham, England; centered on a gang who sew razor blades in the peaks of their caps, and their fierce boss Tommy Shelby.',
     posterUrl: 'https://m.media-amazon.com/images/M/MV5BZjRjOTFkOTktZWUzMi00YzMyLThkMmYtMjEwNmQyNzliYTNmXkEyXkFqcGdeQXVyNzQ1ODk3MTQ@._V1_FMjpg_UX1000_.jpg',
     bannerUrl: 'https://image.tmdb.org/t/p/original/cT8kQ02s2zXf22I8nQer8xWcI0B.jpg',
-    trailerUrl: 'https://www.youtube.com/watch?v=oVzVdvGIC7U',
+    trailerUrl: 'https://www.youtube.com/results?search_query=Peaky+Blinders+Official+Trailer',
     category: 'Top Rated',
     rating: 8.8
   },
@@ -87,7 +87,7 @@ const mockMovies = [
     description: 'A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.',
     posterUrl: 'https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_FMjpg_UX1000_.jpg',
     bannerUrl: 'https://image.tmdb.org/t/p/original/s3TBrRGB1iav7gFOCNx3H31MoES.jpg',
-    trailerUrl: 'https://www.youtube.com/watch?v=YoHD9XEInc0',
+    trailerUrl: 'https://www.youtube.com/results?search_query=Inception+Official+Trailer',
     category: 'Action Movies',
     rating: 8.8
   },
@@ -96,7 +96,7 @@ const mockMovies = [
     description: 'When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.',
     posterUrl: 'https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg',
     bannerUrl: 'https://image.tmdb.org/t/p/original/dqK9Hag1054tghRQSqLSfrkvQnA.jpg',
-    trailerUrl: 'https://www.youtube.com/watch?v=EXeTwQWrcwY',
+    trailerUrl: 'https://www.youtube.com/results?search_query=The+Dark+Knight+Official+Trailer',
     category: 'Action Movies',
     rating: 9.0
   },
@@ -112,9 +112,9 @@ const mockMovies = [
   {
     title: 'Spider-Man: No Way Home',
     description: 'With Spider-Man\'s identity now revealed, Peter asks Doctor Strange for help. When a spell goes wrong, dangerous foes from other worlds start to appear.',
-    posterUrl: 'https://m.media-amazon.com/images/M/MV5BZWMyYzFjYTYtNTRjBi00ZTEzLWE5YTItYjgyYmUwZGRjYWFiXkEyXkFqcGdeQXVyMTM1MTE1NDMx._V1_FMjpg_UX1000_.jpg',
+    posterUrl: 'https://image.tmdb.org/t/p/w500/1g0dhYtq4irTY1R1yhxbrw5HQ51.jpg',
     bannerUrl: 'https://image.tmdb.org/t/p/original/14QbnygCuTO0vl7CAFmZP0sIfL7.jpg',
-    trailerUrl: 'https://www.youtube.com/watch?v=JfVOs4VSpmA',
+    trailerUrl: 'https://www.youtube.com/results?search_query=Spider-Man+No+Way+Home+Official+Trailer',
     category: 'Action Movies',
     rating: 8.0
   },
@@ -123,7 +123,7 @@ const mockMovies = [
     description: 'A team of explorers travel through a wormhole in space in an attempt to ensure humanity\'s survival.',
     posterUrl: 'https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_FMjpg_UX1000_.jpg',
     bannerUrl: 'https://image.tmdb.org/t/p/original/rAiYTfKGqDCRIIqo664sY0XZ0Ed.jpg',
-    trailerUrl: 'https://www.youtube.com/watch?v=zSWdZVtXT7E',
+    trailerUrl: 'https://www.youtube.com/results?search_query=Interstellar+Official+Trailer',
     category: 'Action Movies',
     rating: 8.6
   },
